@@ -1,0 +1,253 @@
+<html>
+<head>
+	<title>Remote Files Framework Readme</title>
+	<style type="text/css">
+	/* reset.css */
+	html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+	body {line-height:1.5;}
+	table {border-collapse:separate;border-spacing:0;}
+	caption, th, td {text-align:left;font-weight:normal;}
+	table, td {vertical-align:top;}
+	table th {vertical-align: middle;}
+	blockquote:before, blockquote:after, q:before, q:after {content:"";}
+	blockquote, q {quotes:"" "";}
+	a img {border:none;}
+
+	/* typography.css */
+	html {font-size:100.01%;}
+	body {font-size:85%;color:#222;background:#999;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;}
+	h1, h2, h3, h4, h5, h6 {font-weight:bold;color:#111;}
+	h1 {font-size:3em;line-height:1;margin-bottom:0.5em; margin-top:50px;}
+	h2 {font-size:2em;margin-bottom:0.75em;}
+	h3 {font-size:1.5em;line-height:1;margin-bottom:1em; border-bottom:1px solid #000; padding-bottom: 10px;}
+	h4 {font-size:1.2em;line-height:1.25;margin-bottom:1.25em; margin-left: 0.75em;}
+	h5 {font-size:1em;font-weight:bold;margin-bottom:1.5em; margin-left: 2em;}
+	h6 {font-size:1em;font-weight:bold;}
+	h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {margin:0;}
+	p {margin:0 0 1.5em 2em;}
+	p img.left {float:left;margin:1.5em 1.5em 1.5em 0;padding:0;}
+	p img.right {float:right;margin:1.5em 0 1.5em 1.5em;}
+	a:focus, a:hover {color:#000;}
+	a {color:#009;text-decoration:underline;}
+	blockquote {margin:1.5em;color:#666;font-style:italic;}
+	strong {font-weight:bold;}
+	em, dfn {font-style:italic;}
+	dfn {font-weight:bold;}
+	sup, sub {line-height:0;}
+	abbr, acronym {border-bottom:1px dotted #666;}
+	address {margin:0 0 1.5em;font-style:italic;}
+	del {color:#666;}
+	pre {margin:1.5em 0 1.5em 2em;white-space:pre; background-color: #ebebeb; padding: 10px;}
+	pre, code, tt {font:1.1em 'andale mono', 'lucida console', monospace;line-height:1.5;background-color: #ebebeb;}
+	li ul, li ol {margin:0;}
+	ul, ol {margin:0 1.5em 1.5em 0;padding-left:3.333em;}
+	ul {list-style-type:disc;}
+	ol {list-style-type:decimal;}
+	dl {margin:0 0 1.5em 0;}
+	dl dt {font-weight:bold;}
+	dd {margin-left:1.5em;}
+	table {margin-bottom:1.4em;width:100%;}
+	th {font-weight:bold;}
+	thead th {background:#c3d9ff;}
+	th, td, caption {padding:4px 10px 4px 5px;}
+	tr.even td {background:#e5ecf9;}
+	tfoot {font-style:italic;}
+	caption {background:#eee;}
+	.small {font-size:.8em;margin-bottom:1.875em;line-height:1.875em;}
+	.large {font-size:1.2em;line-height:2.5em;margin-bottom:1.25em;}
+	.hide {display:none;}
+	.quiet {color:#666;}
+	.loud {color:#000;}
+	.highlight {background:#ff0;}
+	.added {background:#060;color:#fff;}
+	.removed {background:#900;color:#fff;}
+	.first {margin-left:0;padding-left:0;}
+	.last {margin-right:0;padding-right:0;}
+	.top {margin-top:0;padding-top:0;}
+	.bottom {margin-bottom:0;padding-bottom:0;}
+	
+	div.container {margin: 0 auto; width:950px; background-color: #fff; padding: 20px; border: 1px solid #000; border-top: none; -webkit-box-shadow: 0 3px 6px #666; margin-bottom: 50px;}
+	ol ul {list-style:none;}
+	ol ul h5 { text-decoration: underline; margin-top:10px; margin-bottom:0; margin-left: 0;}
+	ol ul p { margin-left: 10px;}
+	img#logo { float: right;}
+	</style>
+</head>
+<body>
+	
+	
+<div class="container">
+<a href="http://www.christopherimrie.com"><img src="http://www.christopherimrie.com/images/public/christopherimrie-logo.png" id="logo"/></a>
+<h1>Remote File Browser</h1>
+<p>This fieldtype allows you to have a Rackspace Cloud Files, FTP and Amazon S3 file browser inside of your EE publish page. Flexible settings allow you to only show one, two or all three file browsers in a single field as well as customize your settings to have each field connect to different Cloud Files, FTP, or Amazon S3 accounts. The file browser also includes Caching to ensure your keep you Cloud Files and Amazon S3 requests to a minimum.
+</p>
+<h2>Info</h2>
+<p>Developed by Christopher Imrie, <a href="http://www.christopherimrie.com">http://www.christopherimrie.com</a></p>
+
+
+<h2>Requirements</h2>
+<ul>
+	<li>ExpressionEngine 2.1 +</li>
+</ul>
+
+<h2>Browser Compatibility</h2>
+<ul>
+	<li>Firefox 3.5+</li>
+	<li>Safari 3+</li>
+	<li>Chrome 4+</li>
+	<li>Opera 10+</li>
+</ul>
+
+<h2>Installation</h2>
+<ol>
+	<li>Copy the <code>system/expressionengine/third_party/remote_file_browser</code> folder to your <code>expressionengine/third_party/</code> folder.</li>
+	<li>Copy the <code>themes/third_party/remote_file_browser</code> folder to your <code>themes/third_party/</code> folder.  If the <strong>third_party</strong> folder does not exist, create it.</li>
+	<li>Go to <em>Add-ons &rarr; Fieldtypes</em> in the ExpressionEngine control panel and install the fieldtype labelled <strong>Remote Files Browser</strong></li>
+	<li>You will be prompted to install a module as well as the fieldtype, this module is needed for secure AJAX communication, select 'install' to both the module and the fieldtype</li>
+	<li>To setup global settings, go to <em>Add-ons &rarr; Fieldtypes &rarr; Remote Files Browser</em> and enter the details for the Remote File protocol you wish to use.  You may leave file protocols you do not wish to use blank</li>
+		<ul>
+			<li><h5>Cloud Files Settings</h5>
+			<p>The Username is the same username you use to access the Rackspace Cloud control panel.  The API key can be found in the Rackspace Cloud control panel by going to Your Account &rarr; API Access. The API Key is 32 characters in length and when copying it into the API Key field, make sure you include <strong>no spaces</strong>.</p>	
+			<p>The <em>Restrict to container</em> field is optional.  Entering the name of one of your Cloud Files containers in here will allow you to restrict the user on the publish page to that container.</p>
+			</li>
+			<li><h5>FTP Settings</h5>
+				<p>The FTP host should be the web address of the FTP server you wish to contact, <strong>without "http://"</strong>.  An Address such as <em>ftp.mysite.com</em> is valid whereas <em>http://ftp.mysite.com</em> is not.</p>
+				<p>The FTP username and password are the same credentials you use to access your site via your desktop FTP program.  </p>
+				<p>The FTP Path is the server path to your public folder on your server <strong>with a trailing slash</strong>.  This is unique to every server environment but some valid examples are: "<em>htdocs/</em>", "<em>www/</em>" or "<em>www.mysite.com/web/content/</em>".</p>
+				<p>The FTP Server URL is the full public web address to the same folder you specified in the FTP Path setting <strong>with a trailing slash</strong>.  So this could be "<em>http://www.mysite.com/</em>" or if you specified a subfolder in the FTP Path setting, "<em>http://www.mysite.com/subfolder/</em>"</p>
+			</li>
+			<li><h5>Amazon S3 Settings</h5>
+				<p>The S3 Username is sometimes referred to as the "Access Key", but this along with the S3 Secret Key, can be found in your Amazon AWS control panel</p>
+				<p>The <em>Restrict to bucket</em> field is optional.  Entering the name of one of your S3 buckets in here will allow you to restrict the user on the publish page to that bucket.</p>
+			</li>
+		</ul>
+	
+	<li>Create a custom channel field as usual, and select <strong>Remote Files Browser</strong> as the Field type.  You may override you global settings in the <em>Custom Field Options</em> section when creating a new field.  This will allow you to connect to different servers for each of your fields and channels</li>
+</ol>
+
+
+
+<h2>How to use</h2>
+
+<h3>Publish Page</h3>
+
+<h4>The file viewer</h4>
+<p>The <strong>Remote Files Framework</strong> will display a tabbed file browser in your publish page, with each tab representing a different connection protocol. You can navigate the folder structure of your remote server connection by simply clicking the files or folders in the file viewer.</p>
+<p>Depending on the nature of your <strong>Remote Files Browser</strong> package you purchased, you may be able to allow / disallow certain file protocols in the <em>Custom Channel Fields</em> settings when creating a new <strong>Remote Files Browser</strong> field.  This will change the number of tabs shown on the publish page for that field.</p>
+<p>You may switch between different connection protocols whilst browsing and the framework will remember your last position.</p>
+<p>When selecting a file, the name will be highlighted in blue to confirm you have selected a file.  You may preview this file whilst it is highlighted by double clicking the filename or clicking the <em>Preview</em> button</p>
+
+<h4>Caching</h4>
+<p>The <strong>Remote Files Framework</strong> has a built caching layer that intercepts AJAX requests to save on bandwidth costs when connecting to services such as S3 and Cloud Files.</p>
+<p>All file data shown in the file viewer is cached by default and this cache can be dumped by click the <em>Refresh</em> button.  When the cache is dumped, only the cache for the current protocol you are  viewing is dumped, however, the cache dump erases the entire cached file tree for that protocol.</p>
+<p>The <em>Refresh</em> button will also have the <strong>Remote Files Framework</strong> fetch the file data for the protocol you are viewing again</p>
+<p>There are no automatic cache refreshes (eg: after a specified amount of time)</p>
+
+<h3>Templates</h3>
+<p>The field type supports single tags only.  Use the field name you specified in your <em>Custom Channel Field</em> settings, to return the full web url to the file you selected in the file viewer on the publish page.</p>
+<p>The field also supports a parameter called "show" which allows you to specify what data you want to show in your templates</p>
+
+<h4>Simple Example</h4>
+
+<p>Lets say you have defined a custom field with a field label of <strong>Remote File</strong> and field name <strong>remote_file</strong> and through the publish form selected a file called "<em>my_picture.jpg</em>" using the file viewer.</p>
+<p>You can produce the full web url to the selected file by simply calling the field name tag on its own:
+
+<pre>
+	<code>
+		{exp:channel:entries channel="channel_name"}
+			Your selected file url is {remote_file}
+		{/exp:channel:entries}
+	</code>
+</pre>
+
+<h5>Returns:</h5>
+<pre>
+	<code>
+		Your selected file url is http://www.example.com/path/to/image/my_picture.jpg
+	</code>
+</pre>
+
+<h4>Parameter Example</h4>
+
+<p>Using the file you have selected in the above example, we can retrieve different file attributes by using the <em>show</em> parameter:</p>
+
+<pre><code>
+		{exp:channel:entries channel="channel_name"}
+			Your selected filename is {remote_file show="filename"}
+		{/exp:channel:entries}
+	</code></pre>
+
+<h5>Returns:</h5>
+<pre>
+	<code>
+		Your selected filename is my_picture.jpg
+	</code>
+</pre>
+
+<h2>Parameters</h2>
+
+<h3>show</h3>
+
+<pre>
+	<code>
+		{field_name show="filename"}
+	</code>
+</pre>
+
+<p>Allows you to specify what file attribute to return.  This parameter is optional, and if not used, the tag will return the full web url by default.</p>
+
+<p>Accepts the following variables:</p>
+<ul>
+	<li><strong>filename</strong> - Filename including extension</li>
+	<li><strong>path</strong> - <span style="text-decoration:underline">Server</span> path to the file</li>
+	<li><strong>public_url</strong> - Full web url to the file</li>
+	<li><strong>method</strong> - The short name for the file protocol used (eg: ftp, cloud_files, s3)</li>
+</ul>
+<hr/>
+<h2>Known Issues</h2>
+<h4>Using a masked Control Panel or non standard system folder location</h4>
+<p>If you have renamed your control panel file to something different than <code>index.php</code> or you are masking your control panel URL in some other way, you will need to ensure you specify the <code>$config['cp_url']</code> in your control panel index file.</p>
+<h5>Example</h5>
+<p>Lets say you have moved your entire <code>system/</code> folder above your web root.  You have copied the file that was located at <code>system/index.php</code>, renamed it <code>admin.php</code> and placed it at your web root (<em>This would allow you to access the Control Panel via www.example.com/admin.php</em>)</p>
+<p>In order for the Remote Files Browser to work, you will need to ensure you specify the new name of the control panel file as a config variable.  To do this, you open up the new <code>admin.php</code> in a code editor and <em>CUSTOM CONFIG VALUES</em> section, add the new <code>cp_url</code> setting:</p>
+<pre>
+<code>
+	/*
+	 * --------------------------------------------------------------------
+	 *  CUSTOM CONFIG VALUES
+	 * --------------------------------------------------------------------
+	 *
+	 * 'cp_url' is typically the only config override variable
+	 *  that would need to be managed in the control panel index.php file
+	 *
+	 * Un-comment the $assign_to_config array below to use this feature
+	 *
+	 */
+		$assign_to_config['cp_url'] = 'admin.php'; // masked CP access only 
+
+</code>
+</pre>
+
+<p>You can learn more about masking your control panel for extra security by reading the <a href="http://expressionengine.com/user_guide/installation/masked_cp_access.html">ExpressionEngine documentation</a>.</p>
+
+<hr/>
+
+<h2>Change log</h2>
+
+<h4>1.5.1</h4>
+<ul>
+	<li>Fixed URL issues for when using a masked CP or renamed system folder</li>
+</ul>
+
+<h4>1.5</h4>
+<ul>
+	<li>Public release</li>
+</ul>
+
+<h4>1.4</h4>
+<ul>
+	<li>Beta release</li>
+</ul>
+</div>
+</body>
+</html>
