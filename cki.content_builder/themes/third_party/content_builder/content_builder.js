@@ -1,5 +1,8 @@
 var cb_fields = new Array();
+
 dojo.require('dijit.Editor');
+dojo.require('dijit.form.TextBox');
+
 $(document).ready(function(){
 	
 	
@@ -24,7 +27,7 @@ $(document).ready(function(){
 		for(i in cb_fields){
 			
 			//Add the starter textarea
-			cb_fields[i].cb_field.append(textarea());
+			cb_fields[i].cb_field.append(editor());
 			
 			//Add the controls
 			var a = controls();
@@ -37,20 +40,40 @@ $(document).ready(function(){
 	}
 	
 	
+	function codeblock(){
+		var h = $('<h5/>').text('Code');
+		var t = $("<div />").addClass('codeblock').attr('contentEditable', 'true')
+		.data('type', 'code')
+		.attr('rows', '6');
+		
+		var div = $('<div />').addClass('cb_field').data('type', 'codeblock')
 	
+		.append(t);
+		
+		return div;
+	}
 	
-	function textarea(){
-		var div = $("<div />").css('height:', '300px')
-		var a = new dijit.Editor({}, div[0]);
+	function editor(){
+		var h = $('<h5/>').text('Rich Text');
+		var div = $("<div />").addClass('cb_field').data('type', 'editor');
+		var a = $("<div />")
+		var b = new dijit.Editor({}, a[0]);
+		
+		div.append(a)
 		
 		return div;
 	}
 	
 	function input(){
-		var a = $('<input />')
-		a.attr('type', 'text')
+		var h = $('<h5/>').text('Text Input');
+		var input =  $("<input type='text' />");
+		var b = $("<div />").data('type', 'input').addClass('cb_field').append(input);
 		
-		return a;
+		new dijit.form.TextBox({
+			placeHolder : 'New heading'
+		}, input[0]);
+		
+		return b;
 	}
 	
 	function controls(){
@@ -59,7 +82,7 @@ $(document).ready(function(){
 		var a  = $('<a href="#">Add New Textarea</a>');
 		a.click(function(){
 			//Add new textarea on click
-			textarea().appendTo(cb_fields[i].cb_field);
+			editor().appendTo(cb_fields[i].cb_field);
 			return false;
 		})
 		data.push(a);
@@ -74,6 +97,17 @@ $(document).ready(function(){
 			return false;
 		})
 		data.push(b);
+		
+		//Separator
+		data.push($("<span> | </span>"));
+		
+		var c  = $('<a href="#">Add New Code Block</a>');
+		c.click(function(){
+			//Add new text input
+			codeblock().appendTo(cb_fields[i].cb_field);
+			return false;
+		})
+		data.push(c);
 		
 		return data;
 	}

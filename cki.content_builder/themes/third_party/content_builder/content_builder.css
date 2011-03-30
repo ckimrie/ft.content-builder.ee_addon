@@ -1,0 +1,23 @@
+.content_builder .dijitTextBox {
+	width: 100%;
+	padding:;
+}
+.content_builder .dijitTextBox input, .content_builder .dijitTextBox .dijitPlaceHolder{
+	padding: 4px !important;
+}
+.content_builder div.cb_field {
+	margin: 10px 0;
+}
+
+
+.cb_field div.codeblock {
+	font:1em 'andale mono', 'lucida console', 	monospace;line-height:1.5 !important;
+	width: 95%;
+	/*white-space: pre-wrap; /* css-3 */ /*white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+	/*white-space: -pre-wrap; /* Opera 4-6 */
+	/*white-space: -o-pre-wrap; /* Opera 7 */
+	/*word-wrap: break-word; /* Internet Explorer 5.5+ */
+	color: #000; background-color: rgba(255,255,255,0.8); border: 1px dashed rgba(0,0,0,0.5); display: block; margin: 0; padding: 2.5%; font-size: 13px; overflow-y: auto}
+	pre::-webkit-scrollbar { width: 8px; height: 0px; } 
+	pre::-webkit-scrollbar-button { display: none; }
+	pre::-webkit-scrollbar-thumb { background: #ccc; -webkit-border-radius: 4px; }

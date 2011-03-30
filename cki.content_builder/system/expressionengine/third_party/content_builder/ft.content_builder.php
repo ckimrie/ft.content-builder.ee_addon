@@ -30,17 +30,16 @@
 			$this->EE->cp->add_to_head('<script src="' . $this->EE->config->item('theme_folder_url') .'third_party/content_builder/content_builder.js?t=' .  time() .'" type="text/javascript" ></script>');
 			
 			$this->EE->cp->add_to_head('<link rel="stylesheet" type="text/css" href="'. $this->EE->config->item('theme_folder_url') .'third_party/content_builder/dojo/resources/dojo.css">');
-			$this->EE->cp->add_to_head('<link rel="stylesheet" type="text/css" href="'. $this->EE->config->item('theme_folder_url') .'third_party/content_builder/dijit/themes/dijit.css">');
-			$this->EE->cp->add_to_head('<link rel="stylesheet" type="text/css" href="'. $this->EE->config->item('theme_folder_url') .'third_party/content_builder/dijit/themes/nihilo/nihilo.css">');
+			$this->EE->cp->add_to_head('<link rel="stylesheet" type="text/css" href="'. $this->EE->config->item('theme_folder_url') .'third_party/content_builder/dijit/themes/claro/claro.css">');
+			$this->EE->cp->add_to_head('<link rel="stylesheet" type="text/css" href="'. $this->EE->config->item('theme_folder_url') .'third_party/content_builder/dijit/themes/claro/Editor.css">');
 
-			
 			$input = form_textarea(array(
 				'name' => 'field_id_' . $this->field_id,
 				'id' => 'field_id_' . $this->field_id,
 				'style' => 'display:none;'
 			));
 			
-			return $input . "<div class='content_builder' data-target='" . 'field_id_' . $this->field_id . "'></div>";
+			return $input . "<div class='content_builder claro' data-target='" . 'field_id_' . $this->field_id . "'></div>";
 		}
 
 
